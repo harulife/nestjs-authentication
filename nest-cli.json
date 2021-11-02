@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/03-authentication/src",
+  "projects": {
+    "entity": {
+      "type": "library",
+      "root": "libs/entity",
+      "entryFile": "index",
+      "sourceRoot": "libs/entity/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/entity/tsconfig.lib.json"
+      }
+    },
+    "b2b": {
+      "type": "application",
+      "root": "apps/b2b",
+      "entryFile": "main",
+      "sourceRoot": "apps/b2b/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/b2b/tsconfig.app.json"
+      }
+    },
+    "auth": {
+      "type": "library",
+      "root": "libs/auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/auth/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/03-authentication/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/03-authentication"
+}
